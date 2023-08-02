@@ -5,12 +5,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './AuthGuard';
 import { CardsComponent } from './cards/cards.component';
 import { CloseSessionComponent } from './close-session/close-session.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
+  { path: "**", component: ErrorComponent },
   { path: "login", component: LoginComponent },
-  { path: "cards", component: CardsComponent },
-  { path: "closeSession", component: CloseSessionComponent },
+  { path: "cards", component: CardsComponent, canActivate: [AuthGuard] },
+  { path: "closeSession", component: CloseSessionComponent, canActivate: [AuthGuard] },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
 
 
 ];

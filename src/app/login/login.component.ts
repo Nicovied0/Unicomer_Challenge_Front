@@ -12,7 +12,7 @@ export class LoginComponent {
   documentType: string = 'DNI'; // Valor predeterminado
   documentNumber: string = '';
   password: string = '';
-  fullName: string = '';
+  name: string = '';
   email: string = '';
 
   constructor(private authService: AuthService) { }
@@ -54,7 +54,7 @@ export class LoginComponent {
 
   register() {
     const newUser = {
-      fullName: this.fullName,
+      name: this.name,
       email: this.email,
       documentType: this.documentType,
       documentNumber: this.documentNumber,

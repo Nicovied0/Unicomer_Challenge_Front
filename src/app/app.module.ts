@@ -14,6 +14,8 @@ import { LogoComponent } from './logo/logo.component';
 import { SessionComponent } from './session/session.component';
 import { PanelComponent } from './panel/panel.component';
 import { CloseSessionComponent } from './close-session/close-session.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CloseSessionComponent } from './close-session/close-session.component';
     LogoComponent,
     SessionComponent,
     PanelComponent,
-    CloseSessionComponent
+    CloseSessionComponent,
+    ProfileComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
