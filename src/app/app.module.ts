@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CardService } from './Services/Cards.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,9 @@ import { PanelComponent } from './panel/panel.component';
 import { CloseSessionComponent } from './close-session/close-session.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ErrorComponent } from './error/error.component';
+import { CardComponent } from './card/card.component';
+import { UserService } from './Services/User.service';
+import { AuthService } from './Services/Auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { ErrorComponent } from './error/error.component';
     PanelComponent,
     CloseSessionComponent,
     ProfileComponent,
-    ErrorComponent
+    ErrorComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CardService, UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,41 @@
+<div class="card-group">
+  <div class="card">
+    <div class="saldo">Mi saldo</div>
+    <div class="monto">
+      <span *ngIf="showMonto">$ {{ cardData.balance }}</span>
+      <span *ngIf="!showMonto">*****</span>
+      <span (click)="toggleMontoVisibility()" class="toggle-eye span">
+        <i
+          class="fa"
+          [ngClass]="{ 'fa-eye': showMonto, 'fa-eye-slash': !showMonto }"
+        ></i>
+      </span>
+    </div>
+    <div class="logo">
+      <img
+        src="https://res.cloudinary.com/dylweuvjp/image/upload/v1691016700/bn4awtnkgrbr1mqelhp4.png"
+        alt="Visa"
+      />
+    </div>
+    <div class="chip">
+      <img
+        src="https://res.cloudinary.com/dylweuvjp/image/upload/v1691016805/rxsibhtu4g47i4uwmbr3.png"
+        alt="chip"
+      />
+    </div>
+    <div class="number" [ngClass]="{ 'show-number': showNumber }">
+      {{ formattedCardNumber }}
+      <span (click)="toggleNumberVisibility()" class="toggle-eye span">
+        <i
+          class="fa"
+          [ngClass]="{ 'fa-eye': showNumber, 'fa-eye-slash': !showNumber }"
+        ></i>
+      </span>
+    </div>
+    <div class="name">{{ cardData.name }}</div>
+    <div class="validate">
+      <div class="from">Valida hasta</div>
+      <div class="to">{{ cardData.expirationDate | date : "MM/yy" }}</div>
+    </div>
+  </div>
+</div>
