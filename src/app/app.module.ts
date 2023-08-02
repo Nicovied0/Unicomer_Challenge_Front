@@ -12,6 +12,8 @@ import { NavLateralComponent } from './nav-lateral/nav-lateral.component';
 import { CardsComponent } from './cards/cards.component';
 import { LogoComponent } from './logo/logo.component';
 import { SessionComponent } from './session/session.component';
+import { PanelComponent } from './panel/panel.component';
+import { CloseSessionComponent } from './close-session/close-session.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SessionComponent } from './session/session.component';
     NavLateralComponent,
     CardsComponent,
     LogoComponent,
-    SessionComponent
+    SessionComponent,
+    PanelComponent,
+    CloseSessionComponent
   ],
   imports: [
     BrowserModule,

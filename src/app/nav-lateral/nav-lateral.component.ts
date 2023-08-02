@@ -11,5 +11,12 @@ export class NavLateralComponent {
   menuOptions: MenuOption[] = [
     { label: 'Inicio', route: '/' },
     { label: 'Tarjetas', route: '/cards' },
+    { label: 'Prestamos', route: '/' },
+    { label: 'Operaciones', route: '/' },
+    { label: 'Te ofrecemos', route: '/' },
+    { label: 'Seguros', route: '/' },
+    { label: 'Puntos', route: '/' },
+    { label: 'Ayuda', route: '/' },
+    { label: 'Cerrar sesion', route: '/closeSession' },
   ];
 }
