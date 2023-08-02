@@ -1,1 +1,10 @@
-<p>nav-lateral works!</p>
+<div>
+  <app-logo></app-logo>
+  <div>
+    <ul>
+      <li *ngFor="let option of menuOptions">
+        <a [routerLink]="option.route">{{ option.label }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
