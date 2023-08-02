@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div>
+  <div *ngIf="!this.loged">
+    <app-session></app-session>
+
+  </div>
+
+</div>
+
+<div *ngIf="this.loged">
+  <h2>panel</h2>
+</div>

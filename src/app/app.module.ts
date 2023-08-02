@@ -1,28 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { NavLateralComponent } from './nav-lateral/nav-lateral.component';
 import { CardsComponent } from './cards/cards.component';
+import { LogoComponent } from './logo/logo.component';
+import { SessionComponent } from './session/session.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
     HomeComponent,
     NavComponent,
     NavLateralComponent,
-    CardsComponent
+    CardsComponent,
+    LogoComponent,
+    SessionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

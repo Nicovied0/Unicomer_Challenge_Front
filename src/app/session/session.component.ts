@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../Services/User.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-session',
+  templateUrl: './session.component.html',
+  styleUrls: ['./session.component.css']
 })
-export class HomeComponent implements OnInit {
+export class SessionComponent {
   constructor(private userService: UserService) { }
   loged = false
 
@@ -19,5 +19,4 @@ export class HomeComponent implements OnInit {
     this.loged = this.userService.getProfile()
     console.log(this.loged)
   }
-
 }

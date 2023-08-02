@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +6,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) { }
 
-  goRegister() {
-    this.router.navigate(['register'])
+
+  isRegisterMode: boolean = true;
+
+  toggleMode() {
+    this.isRegisterMode = !this.isRegisterMode;
   }
-
+  
 }
