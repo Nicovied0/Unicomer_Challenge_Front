@@ -20,6 +20,15 @@ export class UserService {
     return true
 
   }
+  getData() {
+    const profile = localStorage.getItem('userUnicomer');
+    if (profile) {
+      const profileJson = JSON.parse(profile); // Convertir a objeto JSON
+      console.log(profileJson);
+      return profileJson;
+    }
+    return false;
+  }
 
 
   // async updateUser(id: string, userData: any) {
