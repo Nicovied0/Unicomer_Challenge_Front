@@ -19,4 +19,10 @@ export class NavLateralComponent {
     { label: 'Ayuda', route: '/help', icon: "https://res.cloudinary.com/dylweuvjp/image/upload/v1691039642/wa1tzpore781zaz0afqp.png" },
     { label: 'Cerrar sesion', route: '/closeSession', icon: "https://res.cloudinary.com/dylweuvjp/image/upload/v1691039670/wnffsl1fhhss7r3otawm.png" },
   ];
+
+  hideSidebar: boolean = false;
+  toggleSidebar() {
+    this.hideSidebar = !this.hideSidebar;
+  }
+
 }

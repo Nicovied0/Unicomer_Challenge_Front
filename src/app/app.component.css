@@ -27,20 +27,50 @@ p {
   margin: 0;
 }
 
+.home {
+  width: 100%;
+}
+
+.div2 {
+  /* Establecer el ancho inicial */
+  width: 14rem;
+  /* Aplicar la transición */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Aplicar ancho 0 cuando se aplica la clase .hide-sidebar */
+.hide-sidebar .div2 {
+  width: 0;
+}
+
+/* Media query para pantallas con un ancho mínimo de 391px */
 @media (min-width: 391px) {
+
+  /* Estilos para cambiar la disposición en filas */
   .div {
     display: flex;
     flex-direction: row;
   }
 
+  /* Estilos para el contenedor de la barra lateral en pantallas grandes */
   .div2 {
+    /* Mantener el ancho en 14rem */
     width: 14rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+}
 
-  .home {
-    width: 100%;
+/* Media query adicional para pantallas con un ancho máximo de 390px */
+@media (max-width: 390px) {
+
+  /* Aplicar ancho 0 a .div2 cuando se aplica la clase .hide-sidebar */
+  .hide-sidebar .div2 {
+    width: 0;
+  }
+
+  .div2 {
+    width: 14rem
   }
 }

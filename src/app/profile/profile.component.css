@@ -1,3 +1,10 @@
 h2, p {
   margin: 0;
 }
+.div {
+  height: 70vh;
+  display: flex;
+  padding: 3rem;
+  align-items: center;
+  justify-content: center;
+}

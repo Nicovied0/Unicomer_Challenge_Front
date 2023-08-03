@@ -99,6 +99,7 @@
 @media (max-width: 767px) {
   .card {
     height: 14rem;
+    width: 18rem;
   }
 
   .logo img {
@@ -154,3 +155,5 @@
   }
 
 }
+
+
