@@ -1,7 +1,7 @@
 .card {
   position: relative;
   height: 16rem;
-  width: 27rem;
+  width: 25rem;
   border-radius: 25px;
   background: rgb(0 0 0);
   -webkit-backdrop-filter: blur(30px);
@@ -9,6 +9,7 @@
   border: 2px solid rgb(255 255 255 / 25%);
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  margin: 1rem;
 }
 
 .logo img,
@@ -92,24 +93,11 @@
   right: 110px;
 }
 
-.card {
-  position: relative;
-  height: 16rem;
-  width: 27rem;
-  border-radius: 25px;
-  background: rgb(0 0 0);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  border: 2px solid rgb(255 255 255 / 25%);
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
+
 
 /* Media Query for Small Screens (e.g., Mobile Phones) */
 @media (max-width: 767px) {
   .card {
-    width: 90%;
-    /* Adjust as needed */
     height: 14rem;
   }
 
@@ -162,22 +150,7 @@
 /* Media Query for Medium and Large Screens */
 @media (min-width: 768px) {
   .card {
-    width: 27rem;
+    width: 25rem;
   }
 
-  /* Keep the rest of your original styles for medium and large screens */
-}
-
-.card {
-  position: relative;
-  max-width: 27rem;
-  width: 100%;
-  /* Asegura que la tarjeta no exceda el ancho máximo en pantallas pequeñas */
-  border-radius: 25px;
-  background: rgb(0 0 0);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  border: 2px solid rgb(255 255 255 / 25%);
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
 }

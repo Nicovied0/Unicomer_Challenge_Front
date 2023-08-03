@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+  height: 16rem;
+  width: 25rem;
+  border-radius: 25px;
+  background: rgb(0 0 0);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  border: 2px solid rgb(255 255 255 / 25%);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 1rem;
+}

@@ -27,6 +27,8 @@ import { BenefitsComponent } from './benefits/benefits.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { PointsComponent } from './points/points.component';
 import { HelpsComponent } from './helps/helps.component';
+import { IngresosComponent } from './ingresos/ingresos.component';
+import { EgresosComponent } from './egresos/egresos.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { HelpsComponent } from './helps/helps.component';
     BenefitsComponent,
     InsuranceComponent,
     PointsComponent,
-    HelpsComponent
+    HelpsComponent,
+    IngresosComponent,
+    EgresosComponent
   ],
   imports: [
     BrowserModule,
