@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../Services/Auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,25 @@ import { AuthService } from '../Services/Auth.service';
 export class LoginComponent {
 
   isRegisterMode: boolean = true;
-  documentType: string = 'DNI'; // Valor predeterminado
+  documentType: string = 'DNI';
   documentNumber: string = '';
   password: string = '';
   name: string = '';
   email: string = '';
 
-  constructor(private authService: AuthService) { }
+  // Agregar un FormGroup para la validación
+  registerForm: FormGroup;
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+    // Inicializar el FormGroup en el constructor
+    this.registerForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[A-Za-z ]+$')]],
+      email: ['', [Validators.required, Validators.email]],
+      documentType: ['DNI', Validators.required],
+      documentNumber: ['', Validators.required],
+      password: ['', [Validators.required, Validators.pattern('^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[\\W_]).{8,}$')]]
+    });
+  }
 
   toggleMode() {
     this.isRegisterMode = !this.isRegisterMode;
@@ -52,28 +65,33 @@ export class LoginComponent {
     );
   }
 
-  register() {
-    const newUser = {
-      name: this.name,
-      email: this.email,
-      documentType: this.documentType,
-      documentNumber: this.documentNumber,
-      password: this.password
-    };
 
-    this.authService.register(newUser).subscribe(
-      response => {
-        // Manejar la respuesta del servidor aquí
-        console.log('Registration successful', response);
-        // También podrías hacer un inicio de sesión automático aquí
-        this.login();
-        window.location.reload()
-      },
-      error => {
-        console.error('Registration failed', error);
-      }
-    );
+  register() {
+    if (this.registerForm.valid) {
+      const newUser = {
+        name: this.registerForm.value.name,
+        email: this.registerForm.value.email,
+        documentType: this.registerForm.value.documentType,
+        documentNumber: this.registerForm.value.documentNumber,
+        password: this.registerForm.value.password
+      };
+
+      this.authService.register(newUser).subscribe(
+        response => {
+          // Manejar la respuesta del servidor aquí
+          console.log('Registration successful', response);
+
+          // También podrías hacer un inicio de sesión automático aquí
+          this.login();
+          window.location.reload();
+        },
+        error => {
+          console.error('Registration failed', error);
+        }
+      );
+    }
   }
+
 }
 
 

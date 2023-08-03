@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
+
 import { CardService } from './Services/Cards.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +54,8 @@ import { HelpsComponent } from './helps/helps.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CardService, UserService, AuthService],
   bootstrap: [AppComponent]
