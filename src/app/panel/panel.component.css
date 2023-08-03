@@ -4,7 +4,7 @@ p {
 }
 
 .inicio {
-  margin:1rem;
+  margin: 1rem;
 }
 
 .div {
@@ -14,6 +14,13 @@ p {
 .divsInicio {
   display: flex;
   flex-wrap: wrap;
+}
+
+.Balanceytransacciones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .homepanel {
