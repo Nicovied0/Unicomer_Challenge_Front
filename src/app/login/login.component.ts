@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../Services/Auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
   // Agregar un FormGroup para la validación
   registerForm: FormGroup;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
     // Inicializar el FormGroup en el constructor
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[A-Za-z ]+$')]],
@@ -51,8 +52,12 @@ export class LoginComponent {
           user => {
             // Save user information to localStorage
             localStorage.setItem('userUnicomer', JSON.stringify(user));
-            window.location.reload()
+            this.router.navigate(['/'])
             console.log('Login successful', response);
+            setTimeout(() => {
+              window.location.reload()
+            })
+
           },
           error => {
             console.error('Error getting user information', error);

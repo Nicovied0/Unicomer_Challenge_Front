@@ -1,10 +1,14 @@
 <div class="div">
-  <div *ngIf="this.loged" class="div2">
+  <div *ngIf="loged" class="div2">
     <app-nav-lateral></app-nav-lateral>
+  </div>
+  <div *ngIf="loged && !isScrolled" class="div3">
+    <app-hamburger
+      id="hamburgerMenu"
+    />
   </div>
 
   <div class="home">
-
-    <router-outlet ></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </div>

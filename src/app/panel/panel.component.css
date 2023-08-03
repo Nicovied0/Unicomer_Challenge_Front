@@ -14,6 +14,7 @@ p {
 .divsInicio {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Balanceytransacciones {

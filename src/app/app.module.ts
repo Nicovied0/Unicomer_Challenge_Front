@@ -33,6 +33,7 @@ import { BalancesComponent } from './balances/balances.component';
 import { TransaccionsComponent } from './transaccions/transaccions.component';
 import { SetingsComponent } from './setings/setings.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { HamburgerComponent } from './hamburger/hamburger.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     BalancesComponent,
     TransaccionsComponent,
     SetingsComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    HamburgerComponent
   ],
   imports: [
     BrowserModule,
