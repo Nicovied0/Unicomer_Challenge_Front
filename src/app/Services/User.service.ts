@@ -8,7 +8,6 @@ import { Observable,  } from 'rxjs';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  private apiUrl = 'http://localhost:8080/api/cards';
 
   getProfile() {
     const token = localStorage.getItem('tokenUnicomer');

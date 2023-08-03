@@ -28,11 +28,6 @@ export class BalancesComponent {
     { label: 'May', value: "50", valueLast: "45" },
     { label: 'Jun', value: "80", valueLast: "50" },
     { label: 'Jul', value: "75", valueLast: "80" },
-    { label: 'Ago', value: "60", valueLast: "70" },
-    { label: 'Sep', value: "55", valueLast: "55" },
-    { label: 'Oct', value: "88", valueLast: "80" },
-    { label: 'Nov', value: "80", valueLast: "60" },
-    { label: 'Dic', value: "90", valueLast: "70" },
 
   ];
   yearOptions: YearOption[] = [
