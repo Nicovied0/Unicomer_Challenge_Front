@@ -20,6 +20,12 @@ import { ErrorComponent } from './error/error.component';
 import { CardComponent } from './card/card.component';
 import { UserService } from './Services/User.service';
 import { AuthService } from './Services/Auth.service';
+import { OperationsComponent } from './operations/operations.component';
+import { LoansComponent } from './loans/loans.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { PointsComponent } from './points/points.component';
+import { HelpsComponent } from './helps/helps.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { AuthService } from './Services/Auth.service';
     CloseSessionComponent,
     ProfileComponent,
     ErrorComponent,
-    CardComponent
+    CardComponent,
+    OperationsComponent,
+    LoansComponent,
+    BenefitsComponent,
+    InsuranceComponent,
+    PointsComponent,
+    HelpsComponent
   ],
   imports: [
     BrowserModule,
