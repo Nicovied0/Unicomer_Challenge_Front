@@ -1,5 +1,30 @@
 <div class="div">
-  <h2>
-    a
-  </h2>
+  <div class="card-group">
+    <div *ngFor="let cardData of cardsData">
+      <div class="card">
+        <div>
+          <div class="saldo">Mi saldo</div>
+          <div class="monto">$ {{ cardData.balance }}</div>
+        </div>
+        <div class="logo">
+          <img
+            src="https://res.cloudinary.com/dylweuvjp/image/upload/v1691016700/bn4awtnkgrbr1mqelhp4.png"
+            alt="Visa"
+          />
+        </div>
+        <div class="chip">
+          <img
+            src="https://res.cloudinary.com/dylweuvjp/image/upload/v1691016805/rxsibhtu4g47i4uwmbr3.png"
+            alt="chip"
+          />
+        </div>
+        <div class="number"></div>
+        <div class="name">{{ cardData.cardHolderName }}</div>
+        <div class="validate">
+          <div class="from">Valida hasta</div>
+          <div class="to">{{ cardData.expirationDate | date : "MM/yy" }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

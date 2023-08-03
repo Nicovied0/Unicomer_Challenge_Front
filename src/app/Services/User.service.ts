@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable,  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-
+  private apiUrl = 'http://localhost:8080/api/cards';
 
   getProfile() {
     const token = localStorage.getItem('tokenUnicomer');
@@ -31,10 +30,6 @@ export class UserService {
   }
 
 
-  // async updateUser(id: string, userData: any) {
-  //   const url = `https://bvscback.vercel.app/users/${id}`;
-  //   return this.http.put(url, userData).toPromise();
-  // }
 
 
 }

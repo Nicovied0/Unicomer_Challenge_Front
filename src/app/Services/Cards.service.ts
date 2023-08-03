@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable,forkJoin  } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,4 +17,13 @@ export class CardService {
       throw error;
     }
   }
+
+
+
+
+  getCardsData(cardIds: string[]): Observable<any[]> {
+    const observables = cardIds.map(cardId => this.getCardData(cardId));
+    return forkJoin(observables); // Combina múltiples observables en uno solo
+  }
+
 }
