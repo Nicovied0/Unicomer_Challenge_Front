@@ -1,5 +1,32 @@
 <div class="div">
   <div class="card">
-    <h2>Balance</h2>
+    <div class="divSuperior">
+      <h2>Balance</h2>
+      <select class="select" [(ngModel)]="selectedOption">
+        <option value="año">Año</option>
+        <option value="mes">Mes</option>
+        <option value="semana">Semana</option>
+      </select>
+    </div>
+    <div class="">
+      <div class="bar-chart">
+        <ul class="ul">
+          <li class="li" *ngFor="let option of selectedOptions">
+            <div class="div2">
+              <div>
+                <div
+                  class="bar"
+                  [style.height.px]="option.value"
+                  [title]="'Value: ' + option.value"
+                ></div>
+              </div>
+              <div>
+                <div>{{ option.label }}</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

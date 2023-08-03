@@ -28,8 +28,30 @@ p {
   padding: 1rem;
 }
 
+.appbalance {
+  width: 60%;
+  margin: 0 1rem
+}
+.apptransaccion{
+  width: 40%;
+}
+
 @media (max-width: 390px) {
   .homepanel {
     padding: 0;
   }
+}
+
+@media (max-width: 1000px) {
+  .Balanceytransacciones {
+    flex-direction: column;
+  }
+
+  .appbalance {
+    width: 100%;
+  }
+  .apptransaccion{
+    width: 100%;
+  }
+
 }
