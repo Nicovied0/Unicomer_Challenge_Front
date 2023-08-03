@@ -30,6 +30,9 @@ import { HelpsComponent } from './helps/helps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { EgresosComponent } from './egresos/egresos.component';
 import { BalancesComponent } from './balances/balances.component';
+import { TransaccionsComponent } from './transaccions/transaccions.component';
+import { SetingsComponent } from './setings/setings.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { BalancesComponent } from './balances/balances.component';
     HelpsComponent,
     IngresosComponent,
     EgresosComponent,
-    BalancesComponent
+    BalancesComponent,
+    TransaccionsComponent,
+    SetingsComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

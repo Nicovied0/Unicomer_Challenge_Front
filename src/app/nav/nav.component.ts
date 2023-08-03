@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  constructor(private userService: UserService,private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   profile: any = {}
 
@@ -21,5 +21,12 @@ export class NavComponent implements OnInit {
   }
   goProfile() {
     this.router.navigate(['/profile'])
+  }
+  goSettings() {
+    this.router.navigate(['/settings'])
+
+  }
+  goNotifications() {
+    this.router.navigate(['/notifications'])
   }
 }

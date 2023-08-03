@@ -13,6 +13,8 @@ import { BenefitsComponent } from './benefits/benefits.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { PointsComponent } from './points/points.component';
 import { HelpsComponent } from './helps/helps.component';
+import { SetingsComponent } from './setings/setings.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: "loans", component: LoansComponent, canActivate: [AuthGuard] },
   { path: "benefits", component: BenefitsComponent, canActivate: [AuthGuard] },
   { path: "insurance", component: InsuranceComponent, canActivate: [AuthGuard] },
+  { path: "settings", component: SetingsComponent, canActivate: [AuthGuard] },
+  { path: "notifications", component: NotificationsComponent, canActivate: [AuthGuard] },
   { path: "points", component: PointsComponent, canActivate: [AuthGuard] },
   { path: "help", component: HelpsComponent, canActivate: [AuthGuard] },
 
