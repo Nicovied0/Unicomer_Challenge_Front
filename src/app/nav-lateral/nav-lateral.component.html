@@ -3,7 +3,17 @@
   <div>
     <ul class="ul">
       <li class="li" *ngFor="let option of menuOptions">
-        <a class="a" [routerLink]="option.route">{{ option.label }}</a>
+        <div>
+          <img
+            [routerLink]="option.route"
+            src="{{ option?.icon }}"
+            class="img"
+          />
+        </div>
+        <div class="div2">
+          <a class="a" [routerLink]="option.route">{{ option.label }}</a>
+        </div>
+
       </li>
     </ul>
   </div>

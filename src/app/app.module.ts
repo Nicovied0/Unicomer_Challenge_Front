@@ -29,6 +29,7 @@ import { PointsComponent } from './points/points.component';
 import { HelpsComponent } from './helps/helps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { EgresosComponent } from './egresos/egresos.component';
+import { BalancesComponent } from './balances/balances.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { EgresosComponent } from './egresos/egresos.component';
     PointsComponent,
     HelpsComponent,
     IngresosComponent,
-    EgresosComponent
+    EgresosComponent,
+    BalancesComponent
   ],
   imports: [
     BrowserModule,
