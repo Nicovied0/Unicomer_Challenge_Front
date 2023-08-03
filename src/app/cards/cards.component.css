@@ -1,5 +1,5 @@
 .div {
-  height: 90vh;
+  min-height: 80vh;
   display: flex;
   padding: 3rem;
   align-items: center;

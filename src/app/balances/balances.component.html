@@ -13,12 +13,21 @@
         <ul class="ul">
           <li class="li" *ngFor="let option of selectedOptions">
             <div class="div2">
-              <div>
-                <div
-                  class="bar"
-                  [style.height.px]="option.value"
-                  [title]="'Value: ' + option.value"
-                ></div>
+              <div class="div5">
+                <div>
+                  <div
+                    class="bar bar2"
+                    [style.height.px]="option.valueLast"
+                    [title]="'Ingresos: ' + option.valueLast"
+                  ></div>
+                </div>
+                <div>
+                  <div
+                    class="bar"
+                    [style.height.px]="option.value"
+                    [title]="'Egresos: ' + option.value"
+                  ></div>
+                </div>
               </div>
               <div>
                 <div>{{ option.label }}</div>

@@ -19,7 +19,7 @@ export class CardsComponent implements OnInit {
     this.cardService.getCardsData(this.cardIds).subscribe(
       (cardsData: any[]) => {
         this.cardsData = cardsData;
-        console.log(this.cardsData)
+        console.log(this.cardsData.length)
       },
       error => {
         console.error('Error al obtener los datos de las tarjetas', error);

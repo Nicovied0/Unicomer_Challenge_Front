@@ -1,4 +1,4 @@
-<div class="div">
+<div class="div" *ngIf="this.cardsData.length">
   <div class="card-group">
     <div *ngFor="let cardData of cardsData">
       <div class="card">
@@ -27,4 +27,9 @@
       </div>
     </div>
   </div>
+  <div></div>
+</div>
+
+<div class="div">
+  <h2>Solicitar nueva tarjeta</h2>
 </div>

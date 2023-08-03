@@ -14,30 +14,25 @@
   display: flex;
   align-items: flex-end;
   height: 200px;
-  /* Altura total del gráfico */
 }
 
 .bar {
   width: 20px;
-  /* Ancho de cada barra */
-  margin: 10px 5px;
-  /* Espacio entre las barras */
+  margin: 3px;
   border-radius: 1rem 1rem 0 0;
-  /* Borde redondeado en la parte superior de las barras */
   background-color: #262e65;
-  /* Color de las barras */
+
   position: relative;
-  /* Posición relativa para tooltips */
   cursor: pointer;
-  /* Cambiar cursor al pasar sobre la barra */
+}
+.bar2{
+  background-color: #5c95bf;
 }
 
 .bar::before {
   content: attr(title);
-  /* Mostrar el contenido del atributo title como tooltip */
   position: absolute;
   bottom: calc(100% + 5px);
-  /* Posicionar el tooltip arriba de la barra */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.7);
@@ -47,9 +42,7 @@
   font-size: 12px;
   white-space: nowrap;
   opacity: 0;
-  /* Inicialmente oculto */
   pointer-events: none;
-  /* Evitar que afecte la interacción */
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -74,6 +67,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.div5 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 .divSuperior {

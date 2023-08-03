@@ -2,5 +2,6 @@
 
 export interface MontOption {
   label: string;
-  value:string
+  value:string;
+  valueLast:string;
 }

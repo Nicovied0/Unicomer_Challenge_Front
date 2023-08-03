@@ -34,6 +34,8 @@ import { TransaccionsComponent } from './transaccions/transaccions.component';
 import { SetingsComponent } from './setings/setings.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HamburgerComponent } from './hamburger/hamburger.component';
+import { NewCardComponent } from './new-card/new-card.component';
+import { CuotasComponent } from './cuotas/cuotas.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { HamburgerComponent } from './hamburger/hamburger.component';
     TransaccionsComponent,
     SetingsComponent,
     NotificationsComponent,
-    HamburgerComponent
+    HamburgerComponent,
+    NewCardComponent,
+    CuotasComponent
   ],
   imports: [
     BrowserModule,
