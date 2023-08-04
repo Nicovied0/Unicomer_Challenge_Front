@@ -11,7 +11,7 @@ export class CardsComponent implements OnInit {
   cardIds: string[] = [];
   nameDate: string = ''
   cardsData: any[] = [];
-  newCardData = { cardHolderName: '', balance: null }; 
+  newCardData = { cardHolderName: '', balance: null };
   isSubmitting = false;
   newCard = false
 
@@ -59,7 +59,7 @@ export class CardsComponent implements OnInit {
           return false;
         }
 
-        return fetch(`http://localhost:8080/users/dni/${documentNumber}`)
+        return fetch(`https://unicomer.up.railway.app/users/dni/${documentNumber}`)
           .then(response => {
             if (!response.ok) {
               throw new Error(response.statusText);
