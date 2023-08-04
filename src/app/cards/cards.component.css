@@ -101,12 +101,33 @@
   right: 110px;
 }
 
+.div4 {
+  min-height: 80vh;
+  display: flex;
+  padding: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .to {
   font-size: 0.5rem;
   bottom: 23px;
   right: 110px;
 }
 
+.input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2rem;
+  margin: 1rem 0;
+}
 
 
 /* Media Query for Small Screens (e.g., Mobile Phones) */

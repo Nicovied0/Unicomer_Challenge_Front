@@ -23,15 +23,17 @@ export class CardService {
 
   getCardsData(cardIds: string[]): Observable<any[]> {
     const observables = cardIds.map(cardId => this.getCardData(cardId));
-    return forkJoin(observables); // Combina múltiples observables en uno solo
+    return forkJoin(observables);
   }
 
-  requestNewCard(newCardData: any, userId: string): Observable<any> {
-    // Enviar solicitud POST para solicitar una nueva tarjeta
+  requestNewCard(newCardData: any, userId: string, documentNumber: string, password: string): Observable<any> {
     const requestData = {
       ...newCardData,
-      userId: userId
+      userId: userId,
+      documentNumber: documentNumber,
+      password: password
     };
     return this.http.post<any>(`${this.apiUrl}/${userId}`, requestData);
   }
+
 }

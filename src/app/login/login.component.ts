@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../Services/Auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+declare const Swal: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -47,17 +47,13 @@ export class LoginComponent {
         // Save token to localStorage
         localStorage.setItem('tokenUnicomer', response.token);
 
-        // Get user information by document number
         this.authService.getUserByDocumentNumber(this.documentNumber).subscribe(
           user => {
-            // Save user information to localStorage
             localStorage.setItem('userUnicomer', JSON.stringify(user));
-            this.router.navigate(['/'])
-            console.log('Login successful', response);
+            this.router.navigate(['/']);
             setTimeout(() => {
-              window.location.reload()
-            })
-
+              window.location.reload();
+            });
           },
           error => {
             console.error('Error getting user information', error);
@@ -65,6 +61,14 @@ export class LoginComponent {
         );
       },
       error => {
+        Swal.fire({
+          title: 'Error de Inicio de Sesión',
+          text: 'Las credenciales proporcionadas no son válidas.',
+          icon: 'error',
+          showCancelButton: false,
+          confirmButtonText: 'Aceptar'
+        });
+
         console.error('Login failed', error);
       }
     );
@@ -83,14 +87,29 @@ export class LoginComponent {
 
       this.authService.register(newUser).subscribe(
         response => {
-          // Manejar la respuesta del servidor aquí
+          // Mostrar una alerta SweetAlert para el registro exitoso
+          Swal.fire({
+            title: '¡Registro Exitoso!',
+            text: 'Tu cuenta ha sido registrada correctamente.',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false
+          });
           console.log('Registration successful', response);
-
-          // También podrías hacer un inicio de sesión automático aquí
           this.login();
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+          });
         },
         error => {
+          Swal.fire({
+            title: 'Error de Registro',
+            text: 'No se pudo completar el registro. Inténtalo nuevamente.',
+            icon: 'error',
+            showCancelButton: false,
+            confirmButtonText: 'Aceptar'
+          });
+
           console.error('Registration failed', error);
         }
       );

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../Services/Cards.service';
+declare const Swal: any;
 
 @Component({
   selector: 'app-cards',
@@ -8,6 +9,7 @@ import { CardService } from '../Services/Cards.service';
 })
 export class CardsComponent implements OnInit {
   cardIds: string[] = [];
+  nameDate: string = ''
   cardsData: any[] = [];
   newCardData = { cardHolderName: '', balance: null }; // Nuevo objeto para la nueva tarjeta
   isSubmitting = false;
@@ -18,7 +20,8 @@ export class CardsComponent implements OnInit {
   ngOnInit() {
     const userUnicomer = JSON.parse(localStorage.getItem('userUnicomer')!);
     this.cardIds = userUnicomer.cardIds;
-
+    this.nameDate = userUnicomer.name
+    console.log(userUnicomer.documentNumber)
     this.cardService.getCardsData(this.cardIds).subscribe(
       (cardsData: any[]) => {
         this.cardsData = cardsData;
@@ -29,24 +32,67 @@ export class CardsComponent implements OnInit {
     );
   }
 
-  // Método para solicitar una nueva tarjeta
   submitForm() {
     this.isSubmitting = true;
     this.isApproved = false;
 
     const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
+    const numberDni = JSON.parse(localStorage.getItem('userUnicomer')!);
+    const expectedDocumentNumber = numberDni.documentNumber;
 
-    this.cardService.requestNewCard(this.newCardData, userId).subscribe(
-      (response: any) => {
-        this.isSubmitting = false;
-        this.isApproved = true;
-        // Actualizar la lista de tarjetas con la nueva tarjeta recibida en la respuesta
-        this.cardsData.push(response);
+    Swal.fire({
+      title: 'Ingresa tu número de documento',
+      input: 'text',
+      showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      showLoaderOnConfirm: true,
+      preConfirm: (documentNumber: any) => {
+        if (documentNumber !== expectedDocumentNumber) {
+          Swal.showValidationMessage(
+            `Ingrese su documento`
+          );
+          return false;
+        }
+
+        return fetch(`http://localhost:8080/users/dni/${documentNumber}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(response.statusText);
+            }
+            return response.json();
+          })
+          .catch(error => {
+            Swal.showValidationMessage(
+              `Request failed: ${error}`
+            );
+          });
       },
-      error => {
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then((result: any) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: `Documento verificado`,
+          text: `Tu documento fue verificado correctamente`,
+          icon: 'success'
+        });
+
+        // Continue with card request using the verified document number
+        // You can directly use `expectedDocumentNumber` here
+        this.cardService.requestNewCard(this.newCardData, userId, expectedDocumentNumber, '').subscribe(
+          (response: any) => {
+            this.isSubmitting = false;
+            this.isApproved = true;
+            this.cardsData.push(response);
+          },
+          error => {
+            this.isSubmitting = false;
+            console.error('Error al solicitar una nueva tarjeta', error);
+          }
+        );
+      } else {
         this.isSubmitting = false;
-        console.error('Error al solicitar una nueva tarjeta', error);
+        this.isApproved = false;
       }
-    );
+    });
   }
 }

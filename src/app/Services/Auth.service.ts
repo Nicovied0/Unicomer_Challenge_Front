@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8080'; // Cambia esto a la URL de tu backend
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -17,11 +17,11 @@ export class AuthService {
   }
 
   getUserByDocumentNumber(documentNumber: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/users/${documentNumber}`);
+    return this.http.get(`${this.apiUrl}/users/dni/${documentNumber}`);
   }
 
   register(newUser: any): Observable<any> {
-    const url = `${this.apiUrl}/register`; // Cambia esto a la URL para el registro en tu backend
+    const url = `${this.apiUrl}/register`;
     return this.http.post(url, newUser);
   }
 }

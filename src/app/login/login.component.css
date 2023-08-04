@@ -4,7 +4,7 @@ p {
 }
 
 .div {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .div2 {
@@ -24,6 +24,20 @@ p {
   justify-content: center;
   padding: 1rem;
   background-color: #262e65;
+}
+
+.imga {
+  width: 1.6rem;
+  margin: 0 1rem;
+
+}
+
+.pp {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .button {
@@ -123,10 +137,12 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: row;
     justify-content: space-between;
   }
-  .div2{
+
+  .div2 {
     width: 100%;
   }
-  .div3{
+
+  .div3 {
     width: 100%;
   }
 }
