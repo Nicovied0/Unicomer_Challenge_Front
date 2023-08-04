@@ -3,7 +3,6 @@
     <div><h2 class="h2">Ultimas Transacciones</h2></div>
     <div>
       <div class="div2">
-        <p class="p"></p>
         <p class="p">Monto</p>
         <p class="p">Fecha</p>
         <p class="p">Status</p>
@@ -19,6 +18,7 @@
         "
       >
         <div class="div2">
+
           <p class="p" style="color: green">$ {{ ingreso.amount }}</p>
           <p class="p" style="color: green">
             {{ ingreso.transactionDate | date }}
@@ -38,11 +38,11 @@
         "
       >
         <div class="div2">
-          <p  style="color: red"class="p">$ {{ egreso.amount }}</p>
+          <p style="color: red" class="p">$ {{ egreso.amount }}</p>
           <p style="color: red" class="p">
             {{ egreso.transactionDate | date }}
           </p>
-          <p style="color: green" class="p">Completado</p>
+          <p style="color: rgb(5, 246, 5)" class="p">Completado</p>
         </div>
       </ng-container>
     </div>

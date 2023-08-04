@@ -8,7 +8,7 @@ declare const Swal: any;
   providedIn: 'root'
 })
 export class DepositService {
-  private apiUrl = 'http://localhost:8080/api/transactions/deposit';
+  private apiUrl = 'https://unicomer.up.railway.app/api/transactions/deposit';
 
   constructor(private http: HttpClient) { }
 
@@ -44,7 +44,7 @@ export class DepositService {
   }
 
   getCardBalance(cardId: string): Observable<number> {
-    return this.http.get<{ balance: number }>(`http://localhost:8080/api/cards/${cardId}`)
+    return this.http.get<{ balance: number }>(`https://unicomer.up.railway.app/api/cards/${cardId}`)
       .pipe(
         map(response => response.balance)
       );

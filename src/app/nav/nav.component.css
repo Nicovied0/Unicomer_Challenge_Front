@@ -58,9 +58,8 @@
 }
 
 @media (max-width: 390px) {
-  .div3 { 
+  .div3 {
     justify-content: space-around;
-
   }
 
   .img {

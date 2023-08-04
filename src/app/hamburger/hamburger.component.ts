@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { MenuOption } from '../../models/menuOption.model'; // Ajusta la ruta según tu estructura de carpetas
 
 

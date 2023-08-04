@@ -21,7 +21,7 @@ export class UserService {
   getData() {
     const profile = localStorage.getItem('userUnicomer');
     if (profile) {
-      const profileJson = JSON.parse(profile); // Convertir a objeto JSON
+      const profileJson = JSON.parse(profile); 
       console.log(profileJson);
       return profileJson;
     }
@@ -32,7 +32,7 @@ export class UserService {
     const profile = localStorage.getItem('userUnicomer');
     if (profile) {
       const profileJson = JSON.parse(profile);
-      return of(profileJson); // Importa 'of' desde 'rxjs' si no lo tienes importado
+      return of(profileJson);
     }
     return of(null);
 

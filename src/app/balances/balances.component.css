@@ -48,7 +48,6 @@
 
 .bar:hover::before {
   opacity: 1;
-  /* Mostrar el tooltip al hacer hover */
 }
 
 .ul {
@@ -101,7 +100,4 @@
   .li {
     margin: 0;
   }
-
-
-
 }

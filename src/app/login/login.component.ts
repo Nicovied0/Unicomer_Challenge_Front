@@ -21,7 +21,6 @@ export class LoginComponent {
   registerForm: FormGroup;
 
   constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
-    // Inicializar el FormGroup en el constructor
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[A-Za-z ]+$')]],
       email: ['', [Validators.required, Validators.email]],
@@ -44,7 +43,6 @@ export class LoginComponent {
 
     this.authService.login(credentials).subscribe(
       response => {
-        // Save token to localStorage
         localStorage.setItem('tokenUnicomer', response.token);
 
         this.authService.getUserByDocumentNumber(this.documentNumber).subscribe(

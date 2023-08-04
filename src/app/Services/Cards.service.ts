@@ -8,7 +8,7 @@ declare const Swal: any;
   providedIn: 'root'
 })
 export class CardService {
-  private apiUrl = 'http://localhost:8080/api/cards/';
+  private apiUrl = 'https://unicomer.up.railway.app/api/cards/';
 
   constructor(private http: HttpClient) { }
   async getCardData(cardId: string): Promise<any> {
@@ -38,7 +38,7 @@ export class CardService {
 
   getEgresosData(cardIds: string[]): Observable<any[]> {
     const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
-    const url = "http://localhost:8080/api/transactions/all";
+    const url = "https://unicomer.up.railway.app/api/transactions/all";
 
     const data = this.http.get<any[]>(url).pipe(
       map(transactions => transactions.filter(transaction =>
@@ -50,7 +50,7 @@ export class CardService {
 
   getIngresosData(cardIds: string[]): Observable<any[]> {
     const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
-    const url = "http://localhost:8080/api/transactions/all";
+    const url = "https://unicomer.up.railway.app/api/transactions/all";
 
     const data = this.http.get<any[]>(url).pipe(
       map(transactions => transactions.filter(transaction =>

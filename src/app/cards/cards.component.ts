@@ -11,7 +11,7 @@ export class CardsComponent implements OnInit {
   cardIds: string[] = [];
   nameDate: string = ''
   cardsData: any[] = [];
-  newCardData = { cardHolderName: '', balance: null }; // Nuevo objeto para la nueva tarjeta
+  newCardData = { cardHolderName: '', balance: null }; 
   isSubmitting = false;
   newCard = false
 

@@ -9,7 +9,7 @@ declare const Swal: any;
   providedIn: 'root'
 })
 export class WithdrawalService {
-  private baseUrl = 'http://localhost:8080/api/transactions/withdraw';
+  private baseUrl = 'https://unicomer.up.railway.app/api/transactions/withdraw';
 
   constructor(private http: HttpClient) { }
 
@@ -45,7 +45,7 @@ export class WithdrawalService {
   }
 
   getCardBalance(cardId: string): Observable<number> {
-    return this.http.get<{ balance: number }>(`http://localhost:8080/api/cards/${cardId}`)
+    return this.http.get<{ balance: number }>(`https://unicomer.up.railway.app/api/cards/${cardId}`)
       .pipe(
         map(response => response.balance)
       );

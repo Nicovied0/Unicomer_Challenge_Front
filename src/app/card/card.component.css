@@ -95,7 +95,6 @@
 
 
 
-/* Media Query for Small Screens (e.g., Mobile Phones) */
 @media (max-width: 767px) {
   .card {
     height: 14rem;
@@ -148,7 +147,6 @@
   }
 }
 
-/* Media Query for Medium and Large Screens */
 @media (min-width: 768px) {
   .card {
     width: 25rem;

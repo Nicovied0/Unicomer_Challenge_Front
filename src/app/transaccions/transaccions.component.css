@@ -26,6 +26,7 @@
 .div2 {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
 }
 
 .p {

@@ -5,5 +5,5 @@ export interface CuotesOption {
   Cuotas: string;
   Fecha: string;
   Mensual: string;
-  Insteres: string;
+  Interes: string;
 }

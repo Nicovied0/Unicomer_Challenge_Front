@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
     this.getProfile()
     console.log(this.profile.name)
   }
-
   getProfile() {
     this.profile = this.userService.getData()
   }
@@ -24,7 +23,6 @@ export class NavComponent implements OnInit {
   }
   goSettings() {
     this.router.navigate(['/settings'])
-
   }
   goNotifications() {
     this.router.navigate(['/notifications'])

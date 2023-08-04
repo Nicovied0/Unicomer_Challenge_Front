@@ -1,13 +1,26 @@
 <div class="div">
   <div class="card">
     <div class="div2">
-      <p></p>
-      <p>Monto total</p>
-      <p>Cuotas</p>
-      <p>Fecha de emisión</p>
-      <p>Mensual</p>
-      <p>Tasa de interés</p>
-      <p></p>
+      <p class="p"></p>
+      <p class="p">Monto total</p>
+      <p class="p">Cuotas</p>
+      <p class="p">Fecha de emisión</p>
+      <p class="p">Mensual</p>
+      <p class="p">Tasa de interés</p>
+    </div>
+    <div class="div2">
+      <ul class="ul">
+        <li *ngFor="let option of cuotesOptions">
+          <div class="div3">
+            <input type="checkbox" class="p checkbox" />
+            <p class="p ">${{ option.montoTotal }}</p>
+            <p class="p">{{ option.Cuotas }}</p>
+            <p class="p">{{ option.Fecha }}</p>
+            <p class="p">{{ option.Mensual }}</p>
+            <p class="p">{{ option.Interes }}</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
