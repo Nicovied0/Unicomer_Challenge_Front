@@ -9,16 +9,16 @@ declare const Swal: any;
 })
 export class CardsComponent implements OnInit {
   cardIds: string[] = [];
-  nameDate: string = ''
+  nameDate: string = '';
   cardsData: any[] = [];
   newCardData = { cardHolderName: '', balance: null };
   isSubmitting = false;
-  newCard = false
+  newCard = false;
 
   constructor(private cardService: CardService) { }
 
   toggleNewCard() {
-    this.newCard = !this.newCard
+    this.newCard = !this.newCard;
   }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class CardsComponent implements OnInit {
     this.cardIds = userUnicomer.cardIds;
     this.nameDate = userUnicomer.name;
     this.newCardData.cardHolderName = this.nameDate;
-    console.log(userUnicomer.documentNumber);
+
     this.cardService.getCardsData(this.cardIds).subscribe(
       (cardsData: any[]) => {
         this.cardsData = cardsData;
@@ -36,7 +36,6 @@ export class CardsComponent implements OnInit {
       }
     );
   }
-
 
   submitForm() {
     this.isSubmitting = true;
@@ -84,6 +83,13 @@ export class CardsComponent implements OnInit {
         this.cardService.requestNewCard(this.newCardData, userId, expectedDocumentNumber, '').subscribe(
           (response: any) => {
             this.isSubmitting = false;
+
+            // Actualizar el objeto userUnicomer en el Local Storage
+            const userUnicomer = JSON.parse(localStorage.getItem('userUnicomer')!);
+            userUnicomer.cardIds.push(response.id);
+            localStorage.setItem('userUnicomer', JSON.stringify(userUnicomer));
+
+            // Actualizar la lista de tarjetas en el componente
             this.cardsData.push(response);
           },
           error => {
