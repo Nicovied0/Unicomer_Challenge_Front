@@ -2,11 +2,6 @@
   margin-top: 2rem;
   position: relative;
   border-radius: 25px;
-  background: rgb(249, 249, 249);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  border: 2px solid rgb(255 255 255 / 25%);
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   min-height: 35vh;
   display: flex;
@@ -14,6 +9,8 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .ul {
@@ -33,13 +30,15 @@
 
 .div3 {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  background-color: white;
+  padding: 3rem 0.3rem;
+  align-items: center;
+  border-radius: 0.3rem;
+  border: 1px solid #8080804d;
 }
 
-.div {
-  height: 20rem;
-}
+
+
 
 .div2 {
   display: flex;
@@ -50,4 +49,20 @@
 
 .checkbox {
   padding: 0;
+}
+
+.button {
+  display: flex;
+  border-radius: 2rem;
+  padding: 1rem 0;
+  align-items: center;
+  border: none;
+  color: white;
+  background-color: #262e65;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: #262e6562;
+  cursor: pointer;
 }

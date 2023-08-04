@@ -7,17 +7,19 @@
       <p class="p">Fecha de emisión</p>
       <p class="p">Mensual</p>
       <p class="p">Tasa de interés</p>
+      <p class="p"></p>
     </div>
     <div class="div2">
       <ul class="ul">
         <li *ngFor="let option of cuotesOptions">
-          <div class="div3">
+          <div class="div3" >
             <input type="checkbox" class="p checkbox" />
             <p class="p ">${{ option.montoTotal }}</p>
             <p class="p">{{ option.Cuotas }}</p>
             <p class="p">{{ option.Fecha }}</p>
             <p class="p">{{ option.Mensual }}</p>
             <p class="p">{{ option.Interes }}</p>
+            <button class="p button">Pagar</button>
           </div>
         </li>
       </ul>
