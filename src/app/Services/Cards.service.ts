@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
+declare const Swal: any;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,9 +21,6 @@ export class CardService {
     }
   }
 
-
-
-
   getCardsData(cardIds: string[]): Observable<any[]> {
     const observables = cardIds.map(cardId => this.getCardData(cardId));
     return forkJoin(observables);
@@ -34,6 +34,30 @@ export class CardService {
       password: password
     };
     return this.http.post<any>(`${this.apiUrl}/${userId}`, requestData);
+  }
+
+  getEgresosData(cardIds: string[]): Observable<any[]> {
+    const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
+    const url = "http://localhost:8080/api/transactions/all";
+
+    const data = this.http.get<any[]>(url).pipe(
+      map(transactions => transactions.filter(transaction =>
+        cardIds.includes(transaction.senderCardId) && transaction.senderCardId !== userId)
+      )
+    );
+    return data
+  }
+
+  getIngresosData(cardIds: string[]): Observable<any[]> {
+    const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
+    const url = "http://localhost:8080/api/transactions/all";
+
+    const data = this.http.get<any[]>(url).pipe(
+      map(transactions => transactions.filter(transaction =>
+        cardIds.includes(transaction.receiverCardId) && transaction.receiverCardId !== userId)
+      )
+    );
+    return data
   }
 
 }

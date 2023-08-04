@@ -24,6 +24,11 @@ p {
   justify-content: space-between;
 }
 
+.fees {
+  width: 100%;
+  min-height: 60vh;
+}
+
 .homepanel {
   padding: 1rem;
 }
@@ -32,7 +37,8 @@ p {
   width: 60%;
   margin: 0 1rem
 }
-.apptransaccion{
+
+.apptransaccion {
   width: 40%;
 }
 
@@ -50,7 +56,8 @@ p {
   .appbalance {
     width: 100%;
   }
-  .apptransaccion{
+
+  .apptransaccion {
     width: 100%;
   }
 

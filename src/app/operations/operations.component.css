@@ -1,8 +1,75 @@
 .div {
   display: flex;
-  height: 70vh;
+  min-height: 70vh;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
   padding: 3rem;
+  align-items: stretch;
+}
+
+.btns {
+  border: none;
+  padding: 0.7rem;
+  border-radius: 1.5rem;
+  color: white;
+  background-color: #262e65;
+  margin: 1rem;
+}
+
+.btns:hover {
+  cursor: pointer;
+  background-color: #4a538c6a;
+
+}
+
+.divShow {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: stretch;
+}
+
+label {
+  margin: 1rem 0;
+}
+
+.p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+.submit{
+  border: none;
+  padding: 0.7rem;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  color: black;
+  background-color: #ffffff;
+  margin: 1rem;
+}
+.submit:hover{
+  background-color: #747474;
+  cursor: pointer;
+}
+.input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.35rem;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -3,9 +3,11 @@
     <div class="imagen">
       <img
         src="https://res.cloudinary.com/dylweuvjp/image/upload/v1691035583/loxduiwkm3dv0yrcgnjv.png"
-      class="img"/>
+        class="img"
+      />
     </div>
-    <div class="titulo">Egresos</div>
-    <div class="monto">$2512</div>
+    <div class="titulo">Último Egreso</div>
+    <div class="monto">{{ ultimoEgreso?.amount | currency }}</div>
+    <!-- Asegúrate de ajustar la propiedad "amount" según la estructura del objeto de egreso -->
   </div>
 </div>

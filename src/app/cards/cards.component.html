@@ -32,17 +32,23 @@
 
 <div class="div div4">
   <h2>Solicitar nueva tarjeta</h2>
-  <form (ngSubmit)="submitForm()" class="form">
+  <p *ngIf="!newCard">
+    Tienes la posibilidad de solicitar una nueva tarjeta con el monto que
+    desees. Haz click
+    <a (click)="toggleNewCard()" style="cursor: pointer">aquí.</a>
+  </p>
+
+  <form (ngSubmit)="submitForm()" class="form" *ngIf="newCard">
     <label for="cardHolderName">Titular de la Tarjeta:</label>
     <input
       type="text"
       id="cardHolderName"
       name="cardHolderName"
-      [(ngModel)]="nameDate"
-      value={{nameDate}}
+      [(ngModel)]="newCardData.cardHolderName"
       required
       class="input"
     />
+
     <label for="balance">Saldo:</label>
     <input
       type="number"
@@ -53,10 +59,8 @@
       [ngModelOptions]="{ standalone: true }"
       class="input"
     />
-    <button type="submit" [disabled]="isSubmitting">Enviar Solicitud</button>
+    <button type="submit" [disabled]="isSubmitting" class="button">
+      Enviar Solicitud
+    </button>
   </form>
-  <div *ngIf="isApproved">
-    <h3>Nueva Tarjeta Aprobada</h3>
-    <!-- Mostrar detalles de la tarjeta aprobada -->
-  </div>
 </div>

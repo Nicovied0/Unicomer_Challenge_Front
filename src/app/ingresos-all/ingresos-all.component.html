@@ -1,0 +1,25 @@
+<div>
+  <h2>Información de Ingresos</h2>
+  <p (click)="toggleShow()" *ngIf="!show">Mostrar Detalles de transacciones</p>
+  <div *ngFor="let egreso of ingresos">
+    <div class="divData" *ngIf="show">
+      <div class="divInicial dive">
+        <p>N° de Tarjeta:</p>
+        <p>{{ egreso.receiverCardId }}</p>
+      </div>
+      <div class="divInicial diva">
+        <p>Operacion N°:</p>
+        <p>{{ egreso.ticketNumber }}</p>
+      </div>
+      <div class="divInicial ">
+        <p>Monto:</p>
+        <p>{{ egreso.amount | currency }}</p>
+      </div>
+
+      <div class="divInicial">
+        <p>Fecha:</p>
+        <p>{{ egreso.transactionDate | date }}</p>
+      </div>
+    </div>
+  </div>
+</div>

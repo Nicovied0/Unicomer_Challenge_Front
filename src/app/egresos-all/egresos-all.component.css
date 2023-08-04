@@ -1,0 +1,31 @@
+.divData {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid #8080801c;
+  border-bottom: 1px solid #8080801c;
+  padding: 1rem;
+}
+
+.div {
+  display: flex;
+}
+
+.divInicial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .diva {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .dive {
+    display: none;
+  }
+}

@@ -14,7 +14,6 @@
           (ngSubmit)="register()"
           [formGroup]="registerForm"
         >
-          <!-- Formulario de Registro -->
           <div class="inputdiv">
             <label for="fullName">Nombre completo</label>
             <input
@@ -116,7 +115,6 @@
         </form>
 
         <form *ngIf="isRegisterMode" (ngSubmit)="login()">
-          <!-- Formulario de Inicio de Sesión -->
           <div>
             <label for="loginDocumentType">Tipo de documento</label>
             <select

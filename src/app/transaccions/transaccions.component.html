@@ -2,20 +2,58 @@
   <div class="card">
     <div><h2 class="h2">Ultimas Transacciones</h2></div>
     <div>
-      <i></i>
-      <p>Nombre</p>
-      <p>monto</p>
-      <p>fecha</p>
-      <p>estado</p>
+      <div class="div2">
+        <p class="p"></p>
+        <p class="p">Monto</p>
+        <p class="p">Fecha</p>
+        <p class="p">Status</p>
+      </div>
+    </div>
+    <div *ngIf="ultimosIngresos.length > 0">
+      <ng-container
+        *ngFor="
+          let ingreso of ultimosIngresos.slice(
+            (paginaActual - 1) * elementosPorPagina,
+            paginaActual * elementosPorPagina
+          )
+        "
+      >
+        <div class="div2">
+          <p class="p" style="color: green">$ {{ ingreso.amount }}</p>
+          <p class="p" style="color: green">
+            {{ ingreso.transactionDate | date }}
+          </p>
+          <p style="color: rgb(5, 246, 5)" class="p">Completado</p>
+        </div>
+      </ng-container>
     </div>
 
-    <div>
-      <p>cantidad</p>
+    <div *ngIf="ultimosEgresos.length > 0" style="height: 100px">
+      <ng-container
+        *ngFor="
+          let egreso of ultimosEgresos.slice(
+            (paginaActual - 1) * elementosPorPagina,
+            paginaActual * elementosPorPagina
+          )
+        "
+      >
+        <div class="div2">
+          <p  style="color: red"class="p">$ {{ egreso.amount }}</p>
+          <p style="color: red" class="p">
+            {{ egreso.transactionDate | date }}
+          </p>
+          <p style="color: green" class="p">Completado</p>
+        </div>
+      </ng-container>
+    </div>
 
-      <div>
-        <i></i>
-        <p>paginacion</p>
-        <i></i>
+    <!-- Paginación -->
+    <div class="div2">
+      <p>Cantidad: {{ totalTransacciones }}</p>
+      <div class="div3">
+        <i class="fa-solid fa-arrow-left icon" (click)="paginaAnterior()"></i>
+        <p class="p">Página {{ paginaActual }} de {{ totalPaginas }}</p>
+        <i class="fa-solid fa-arrow-right icon" (click)="paginaSiguiente()"></i>
       </div>
     </div>
   </div>

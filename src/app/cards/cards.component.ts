@@ -13,15 +13,20 @@ export class CardsComponent implements OnInit {
   cardsData: any[] = [];
   newCardData = { cardHolderName: '', balance: null }; // Nuevo objeto para la nueva tarjeta
   isSubmitting = false;
-  isApproved = false;
+  newCard = false
 
   constructor(private cardService: CardService) { }
+
+  toggleNewCard() {
+    this.newCard = !this.newCard
+  }
 
   ngOnInit() {
     const userUnicomer = JSON.parse(localStorage.getItem('userUnicomer')!);
     this.cardIds = userUnicomer.cardIds;
-    this.nameDate = userUnicomer.name
-    console.log(userUnicomer.documentNumber)
+    this.nameDate = userUnicomer.name;
+    this.newCardData.cardHolderName = this.nameDate;
+    console.log(userUnicomer.documentNumber);
     this.cardService.getCardsData(this.cardIds).subscribe(
       (cardsData: any[]) => {
         this.cardsData = cardsData;
@@ -32,9 +37,9 @@ export class CardsComponent implements OnInit {
     );
   }
 
+
   submitForm() {
     this.isSubmitting = true;
-    this.isApproved = false;
 
     const userId = JSON.parse(localStorage.getItem('userUnicomer')!).id;
     const numberDni = JSON.parse(localStorage.getItem('userUnicomer')!);
@@ -76,12 +81,9 @@ export class CardsComponent implements OnInit {
           icon: 'success'
         });
 
-        // Continue with card request using the verified document number
-        // You can directly use `expectedDocumentNumber` here
         this.cardService.requestNewCard(this.newCardData, userId, expectedDocumentNumber, '').subscribe(
           (response: any) => {
             this.isSubmitting = false;
-            this.isApproved = true;
             this.cardsData.push(response);
           },
           error => {
@@ -91,7 +93,6 @@ export class CardsComponent implements OnInit {
         );
       } else {
         this.isSubmitting = false;
-        this.isApproved = false;
       }
     });
   }

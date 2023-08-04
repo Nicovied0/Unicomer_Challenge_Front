@@ -36,6 +36,9 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { HamburgerComponent } from './hamburger/hamburger.component';
 import { NewCardComponent } from './new-card/new-card.component';
 import { CuotasComponent } from './cuotas/cuotas.component';
+import { EgresosAllComponent } from './egresos-all/egresos-all.component';
+import { IngresosAllComponent } from './ingresos-all/ingresos-all.component';
+import { MonthlyFeesComponent } from './monthly-fees/monthly-fees.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { CuotasComponent } from './cuotas/cuotas.component';
     NotificationsComponent,
     HamburgerComponent,
     NewCardComponent,
-    CuotasComponent
+    CuotasComponent,
+    EgresosAllComponent,
+    IngresosAllComponent,
+    MonthlyFeesComponent
   ],
   imports: [
     BrowserModule,

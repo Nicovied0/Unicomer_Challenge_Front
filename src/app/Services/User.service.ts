@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable,  } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,16 @@ export class UserService {
       return profileJson;
     }
     return false;
+  }
+
+  getInfo() {
+    const profile = localStorage.getItem('userUnicomer');
+    if (profile) {
+      const profileJson = JSON.parse(profile);
+      return of(profileJson); // Importa 'of' desde 'rxjs' si no lo tienes importado
+    }
+    return of(null);
+
   }
 
 

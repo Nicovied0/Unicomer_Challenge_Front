@@ -1,7 +1,7 @@
 .div {
   min-height: 80vh;
   display: flex;
-  padding: 3rem;
+  padding: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -41,6 +41,26 @@
 
 .span {
   margin: 0.3rem
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #262e65;
+  color: white;
+  font-weight: 700;
+}
+
+.button:hover {
+  background-color: #1c2564;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .logo img {
